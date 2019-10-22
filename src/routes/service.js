@@ -120,7 +120,6 @@ router.get('/:cityId/:serviceTypeId', (req, res) => {
 
 router.post('/flagerror', function (req, res) {
   const payload = req.body
-console.log('payload',payload)
   connection.query(
     "INSERT INTO `errors` ( `serviceid`, `errortext`) VALUES (" +
     payload.serviceId +

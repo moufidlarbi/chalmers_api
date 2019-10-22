@@ -10,7 +10,7 @@ const { expect } = chai;
 describe('Testing the services endpoints:', () => {
     it('It should get all services', (done) => {
     chai.request(app)
-      .get('/services')
+      .get('/api/v1/services')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(200);
@@ -29,7 +29,7 @@ describe('Testing the services endpoints:', () => {
     it('It should get all services in a specific city', (done) => {
       const serviceId = 1;
       chai.request(app)
-        .get(`/services/${serviceId}`)
+        .get(`/api/v1/services/${serviceId}`)
         .set('Accept', 'application/json')
         .end((err, res) => {
           expect(res.status).to.equal(200);
@@ -49,7 +49,7 @@ describe('Testing the services endpoints:', () => {
       const serviceId = 1;
       const serviceTypeId = 1;
       chai.request(app)
-        .get(`/services/${serviceId}/${serviceTypeId}`)
+        .get(`/api/v1/services/${serviceId}/${serviceTypeId}`)
         .set('Accept', 'application/json')
         .end((err, res) => {
           expect(res.status).to.equal(200);
@@ -71,7 +71,7 @@ describe('Testing the services endpoints:', () => {
         errorText: 'Wrong address'
       };
       chai.request(app)
-        .post('/services/flagerror')
+        .post('/api/v1/services/flagerror')
         .set('Accept', 'application/json')
         .send(payload)
         .end((err, res) => {
