@@ -1,23 +1,52 @@
 [
-    { 
-        "servicename":"Json Shelter 1",
-        "serviceaddress":"00 Sherbourne",
-        "servicecity":"Toronto",
-        "servicestate":"Ontario",
-        "servicezip":"A0A 0A0",
-        "servicephone":"000-000-0000",
-        "servicecityid":1,
-        "servicetypeid": 0
-     },
-     { 
-        "servicename":"Json Drop-in 2",
-        "serviceaddress":"00 Sherbourne",
-        "servicecity":"Toronto",
-        "servicestate":"Ontario",
-        "servicezip":"A0A 0A0",
-        "servicephone":"000-000-0000",
-        "servicecityid":0,
-        "servicetypeid": 1
-     }
+   {
+      "servicename": "Json Shelter 1",
+      "serviceaddress": "10 shelter address",
+      "servicecity": "Toronto",
+      "servicestate": "Ontario",
+      "servicezip": "A0A 0A0",
+      "servicephone": "000-000-0000",
+      "servicecityid": 1,
+      "servicetypeid": 0
+   },
+   {
+      "servicename": "Json Drop-in 2",
+      "serviceaddress": "3040 drop-in address",
+      "servicecity": "Toronto",
+      "servicestate": "Ontario",
+      "servicezip": "A0A 0A0",
+      "servicephone": "000-000-0000",
+      "servicecityid": 1,
+      "servicetypeid": 1
+   },
+   {
+      "servicename": "Json Drop-in 3",
+      "serviceaddress": "3040 drop-in address",
+      "servicecity": "New York",
+      "servicestate": "New York",
+      "servicezip": "00000",
+      "servicephone": "000-000-0000",
+      "servicecityid": 2,
+      "servicetypeid": 1
+   },
+   {
+      "servicename": "Json Shelter 4",
+      "serviceaddress": "3040 drop-in address",
+      "servicecity": "Los Angeles",
+      "servicestate": "California",
+      "servicezip": "A0A 0A0",
+      "servicephone": "000-000-0000",
+      "servicecityid": 3,
+      "servicetypeid": 1
+   },
+   {
+      "servicename": "Json Shelter 4",
+      "serviceaddress": "3040 drop-in address",
+      "servicecity": "San Francisco",
+      "servicestate": "California",
+      "servicezip": "A0A 0A0",
+      "servicephone": "000-000-0000",
+      "servicecityid": 4,
+      "servicetypeid": 1
+   }
 ]
-

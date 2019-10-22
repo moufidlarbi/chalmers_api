@@ -95,7 +95,7 @@ router.get('/:cityId/:serviceTypeId', (req, res) => {
   connection.query(sql, function(error, results, fields) {
     if (error) throw error;
     
-    // push mock data
+    // push mock data to output array
     fetch('http://5dae93e7c7e88c0014aa34b7.mockapi.io/services')
       .then(response => response.json())
       .then((mockData) => {
@@ -120,14 +120,9 @@ router.get('/:cityId/:serviceTypeId', (req, res) => {
   })
 })
 
+// route to flag errors and inaccuracies
 router.post('/flagerror', function (req, res) {
   const payload = req.body
-  const newError = [
-    { 
-        "servicename":"Json Shelter 1",
-        "serviceaddress":"00 Sherbourne"
-     }
-]
   
   // store data in db
   connection.query(
