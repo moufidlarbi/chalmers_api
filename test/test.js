@@ -45,7 +45,7 @@ describe('Testing the services endpoints:', () => {
         });
     });
 
-    it('It should get a specific service in a specific city', (done) => {
+    it('It should get a specific service type in a specific city', (done) => {
       const serviceId = 1;
       const serviceTypeId = 1;
       chai.request(app)
