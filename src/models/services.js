@@ -6,6 +6,7 @@ import fetch from 'node-fetch'
 import jsonservices from '../data/services.json'
 const csvFilePath = './src/data/services.csv'
 
+// add imported json file to services
 let services = jsonservices
 
 //  read data from csv file

@@ -18,16 +18,18 @@ const connection = mysql.createConnection({
 connection.connect()
 
 // fetch all services
-router.get('/?', function (req, res) {
+router.get('/', function (req, res) {
   let sql = "SELECT * from services ";
 
   connection.query(sql, function (error, dbResults, fields) {
     if (error) throw error;
     let output=[];
 
+    // fetch data from mock
     fetch('http://5dae93e7c7e88c0014aa34b7.mockapi.io/services')
       .then(response => response.json())
       .then((mockData) => {
+          // concat data from mock, db, json and csv
           output=output.concat(mockData)
           output=output.concat(dbResults)
           output=output.concat(Object.values(req.context.models.services))
@@ -74,7 +76,7 @@ router.get('/:cityId', (req, res) => {
   })
 })
 
-// fetch one specific service type in a specific city
+// fetch one specific service type (shelters, meals..) in a specific city
 router.get('/:cityId/:serviceTypeId', (req, res) => {
   let output=[];
   const serviceCityId = req.params.cityId
@@ -120,6 +122,14 @@ router.get('/:cityId/:serviceTypeId', (req, res) => {
 
 router.post('/flagerror', function (req, res) {
   const payload = req.body
+  const newError = [
+    { 
+        "servicename":"Json Shelter 1",
+        "serviceaddress":"00 Sherbourne"
+     }
+]
+  
+  // store data in db
   connection.query(
     "INSERT INTO `errors` ( `serviceid`, `errortext`) VALUES (" +
     payload.serviceId +
