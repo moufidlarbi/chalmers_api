@@ -36,20 +36,29 @@ router.get('/?', function (req, res) {
       })
   })
 })
-
-// fetch one specific service
+// fetch all services in one specific city
 router.get('/:cityId', (req, res) => {
   let output=[];
   const serviceCityId = req.params.cityId
 
-  const sql = `SELECT * from services where servicecityid=` + serviceCityId;
+  let sql = `SELECT * from services `;
+
+  if (serviceCityId) sql += ' WHERE servicecityid=' + serviceCityId;
+  
   connection.query(sql, function(error, results, fields) {
     if (error) throw error;
     
     // push mock data
     fetch('http://5dae93e7c7e88c0014aa34b7.mockapi.io/services')
       .then(response => response.json())
-      .then((json) => { output.push(json) })
+      .then((mockData) => {
+       
+        for (var i = 0; i < mockData.length; i++) {
+          if (mockData[i].servicecityid == serviceCityId) {
+            output.push(mockData[i])
+          }
+        }
+      })
    
     // push json and csv
     for (var i = 0; i < req.context.models.services.length; i++) {
@@ -57,8 +66,53 @@ router.get('/:cityId', (req, res) => {
         output.push(req.context.models.services[i])
       }
     }
+    
     output=output.concat(results)
-    output=output.concat(Object.values(req.context.models.services))
+
+    return res.send(output)
+  })
+})
+
+// fetch one specific service type and city
+router.get('/:cityId/:serviceTypeId', (req, res) => {
+  let output=[];
+  const serviceCityId = req.params.cityId
+  const serviceTypeId = req.params.serviceTypeId
+
+  let sql = `SELECT * from services `;
+
+  if (serviceCityId && !serviceTypeId) {
+    sql += ' WHERE servicecityid=' + serviceCityId;
+  } else if (serviceCityId && serviceTypeId) {
+    sql += ' WHERE servicecityid=' + serviceCityId + ' AND servicetypeid=' + serviceTypeId;
+  } else if (!serviceCityId && serviceTypeId) {
+    sql += ' WHERE servicetypeid=' + serviceTypeId;
+  }
+  
+  connection.query(sql, function(error, results, fields) {
+    if (error) throw error;
+    
+    // push mock data
+    fetch('http://5dae93e7c7e88c0014aa34b7.mockapi.io/services')
+      .then(response => response.json())
+      .then((mockData) => {
+       
+        for (var i = 0; i < mockData.length; i++) {
+          if (serviceCityId && serviceTypeId && mockData[i].servicecityid == serviceCityId && mockData[i].servicetypeid == serviceTypeId) {
+            output.push(mockData[i])
+          }
+        }
+      })
+   
+    // push json and csv
+    for (var i = 0; i < req.context.models.services.length; i++) {
+      if (serviceCityId && serviceTypeId && req.context.models.services[i].servicecityid == serviceCityId && req.context.models.services[i].servicetypeid == serviceTypeId) {
+        output.push(req.context.models.services[i])
+      }
+    }
+    
+    output=output.concat(results)
+
     return res.send(output)
   })
 })
