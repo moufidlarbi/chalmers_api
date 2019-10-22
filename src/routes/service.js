@@ -36,6 +36,7 @@ router.get('/?', function (req, res) {
       })
   })
 })
+
 // fetch all services in one specific city
 router.get('/:cityId', (req, res) => {
   let output=[];
@@ -73,7 +74,7 @@ router.get('/:cityId', (req, res) => {
   })
 })
 
-// fetch one specific service type and city
+// fetch one specific service type in a specific city
 router.get('/:cityId/:serviceTypeId', (req, res) => {
   let output=[];
   const serviceCityId = req.params.cityId
@@ -119,14 +120,14 @@ router.get('/:cityId/:serviceTypeId', (req, res) => {
 
 router.post('/flagerror', function (req, res) {
   const payload = req.body
-
+console.log('payload',payload)
   connection.query(
     "INSERT INTO `errors` ( `serviceid`, `errortext`) VALUES (" +
-    payload.serviceid +
+    payload.serviceId +
     ", '" +
-    payload.errortext +
+    payload.errorText +
     "');",
-    [payload.serviceid, payload.errortext], function (error, results, fields) {
+    [payload.serviceId, payload.errorText], function (error, results, fields) {
       if (error) throw error
       return res.send({
         error: false,
