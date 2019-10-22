@@ -1,4 +1,21 @@
 [
-    {"id":"0","address":"0 test address","city":"toronto","provinceState":"ontario"},
-    {"id":"1","address":"1 test address","city":"toronto","provinceState":"ontario"}
+    { 
+        "sheltername":"Json Shelter 1",
+        "shelteraddress":"00 Sherbourne",
+        "sheltercity":"Toronto",
+        "shelterstate":"Ontario",
+        "shelterzip":"A0A 0A0",
+        "shelterphone":"000-000-0000",
+        "sheltercityid":4
+     },
+     { 
+        "sheltername":"Json Shelter 2",
+        "shelteraddress":"00 Sherbourne",
+        "sheltercity":"Toronto",
+        "shelterstate":"Ontario",
+        "shelterzip":"A0A 0A0",
+        "shelterphone":"000-000-0000",
+        "sheltercityid":3
+     }
 ]
+
