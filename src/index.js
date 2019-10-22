@@ -26,6 +26,10 @@ app.use('/shelters', routes.shelter)
 
 app.use('/meals', routes.meal)
 
+app.use('/dropins', routes.dropin)
+
+app.use('/clothing', routes.clothing)
+
 app.listen(process.env.PORT, () =>
   console.log(`Listening on port ${process.env.PORT}`)
 )
