@@ -17,22 +17,18 @@ app.get('/', (req, res) => {
 })
 
 app.use((req, res, next) => {
+  // console.log('req',req.query.cityid)
   req.context = {
     models,
-    // me: models.shelters[1]
+    // me: models.services[1]
   }
   next()
 })
 
-app.use('/shelters', routes.shelter)
-
-app.use('/meals', routes.meal)
-
-app.use('/dropins', routes.dropin)
-
-app.use('/clothing', routes.clothing)
-
+app.use('/services', routes.service)
 
 app.listen(process.env.PORT, () =>
   console.log(`Listening on port ${process.env.PORT}`)
 )
+
+module.exports = app

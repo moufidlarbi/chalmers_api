@@ -1,0 +1,23 @@
+[
+    { 
+        "servicename":"Json Shelter 1",
+        "serviceaddress":"00 Sherbourne",
+        "servicecity":"Toronto",
+        "servicestate":"Ontario",
+        "servicezip":"A0A 0A0",
+        "servicephone":"000-000-0000",
+        "servicecityid":1,
+        "servicetypeid": 0
+     },
+     { 
+        "servicename":"Json Drop-in 2",
+        "serviceaddress":"00 Sherbourne",
+        "servicecity":"Toronto",
+        "servicestate":"Ontario",
+        "servicezip":"A0A 0A0",
+        "servicephone":"000-000-0000",
+        "servicecityid":0,
+        "servicetypeid": 1
+     }
+]
+

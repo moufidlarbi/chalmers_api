@@ -1,11 +1,5 @@
-import shelter from './shelter'
-import meal from './meal'
-import dropin from './dropin'
-import clothing from './clothing'
+import service from './service'
 
 export default {
-  shelter,
-  meal,
-  dropin,
-  clothing
+  service
 }

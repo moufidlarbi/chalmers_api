@@ -1,11 +1,9 @@
-import shelters from './shelters'
-import meals from '../data/toronto/meals.json'
+import services from './services'
+// import meals from '../data/toronto/meals.json'
 
 import csvparser from 'csv-parser'
 import fs from 'fs'
 
-const dropins = []
-const clothing = []
 
 // fs.createReadStream('./src/data/toronto/dropins.csv')
 //   .pipe(csvparser())
@@ -22,8 +20,5 @@ const clothing = []
 //   })
 
 export default {
-  shelters,
-  meals,
-  dropins,
-  clothing
+  services
 }
