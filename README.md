@@ -1,10 +1,12 @@
 ### Installing
-Please add environment variables in './env'
+Add environment variables in './env'
 
-To install please use: npm install
+Import 'src/data/chalmers.sql' into MySQL - Database name: chalmers
+
+To install: npm install
 
 ### Getting Started
-To start please use: npm start
+To start: npm start
 
 ### API Endpoints
 
