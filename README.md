@@ -1,9 +1,8 @@
-### Installing
-- Pull Docker image: #docker pull modev22/chalmers_api:latest
-
 ### Getting Started
-$ docker-compose up
-Root URL will be: http://localhost:3257 (http://localhost:3257/api/v1/services)
+Pull Docker image: $ docker pull modev22/chalmers_api:latest
+Use Docker-Compose to start: $ docker-compose up
+
+Root URL will be: http://localhost:3257
 
 ### API Endpoints
 
