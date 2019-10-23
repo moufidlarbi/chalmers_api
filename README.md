@@ -1,8 +1,13 @@
 ### Getting Started
-Pull Docker image: $ docker pull modev22/chalmers_api:latest
-Use Docker-Compose to start: $ docker-compose up
+#Pull Docker image:
+$ docker pull modev22/chalmers_api:latest
 
-Root URL will be: http://localhost:3257
+#Add environment variables file included in email
+
+#Use Docker-Compose:
+$ docker-compose up
+
+#App will be available at this url: http://localhost:3257
 
 ### API Endpoints
 
