@@ -1,12 +1,9 @@
 ### Installing
-Add environment variables in './env'
-
-Import 'app/data/chalmers.sql' into MySQL - Database name: chalmers
-
-To install: npm install
+- Pull Docker image: #docker pull modev22/chalmers_api:latest
 
 ### Getting Started
-To start: npm start
+$ docker-compose up
+Root URL will be: http://localhost:3257 (http://localhost:3257/api/v1/services)
 
 ### API Endpoints
 
