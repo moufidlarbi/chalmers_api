@@ -1,18 +1,19 @@
 import fetch from 'node-fetch'
 import 'dotenv/config'
 import { Router } from 'express'
-import mysql from 'mysql'
+// import mysql from 'mysql'
 
 const router = Router()
 
 // connection configurations
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: `${process.env.MYSQL_USERNAME}`,
-  password: `${process.env.MYSQL_PASSWORD}`,
-  database: `${process.env.MYSQL_DATABASE}`,
-  multipleStatements: true
-})
+var mysql = require("mysql");
+var connection = mysql.createConnection({
+    host            : process.env.DATABASE_HOST,
+    port            : process.env.MYSQL_PORT,
+    user            : process.env.MYSQL_USER,
+    password        : process.env.MYSQL_PASSWORD,
+    database        : process.env.MYSQL_DATABASE
+});
 
 // connect to database
 connection.connect()

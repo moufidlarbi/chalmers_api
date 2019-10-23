@@ -2,7 +2,7 @@
 import chai from 'chai';
 import chatHttp from 'chai-http';
 import 'chai/register-should';
-import app from '../src/index';
+import app from '../app/index';
 
 chai.use(chatHttp)
 const { expect } = chai;
