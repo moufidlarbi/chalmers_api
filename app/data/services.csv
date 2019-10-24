@@ -1,3 +1,4 @@
 servicename,serviceaddress,servicecity,servicestate,servicezip,servicephone,servicecityid,servicetypeid
 CSV Shelter,10 CSV Street ,Toronto,Ontario,A0A 0A0,000-000-0000,3,0
+CSV Shelter,10 CSV Street ,toronto,Ontario,A0A 0A0,000-000-0000,3,0
 CSV Drop-in,20 drop-in CSV address,Toronto,Ontario,A0A 0A0,000-000-0000,1,1

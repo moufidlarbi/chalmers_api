@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use('/api/v1/services', routes.service)
+app.use('/api/v2/services', routes.service)
 
 app.listen(process.env.PORT, () =>
   console.log(`Listening on port ${process.env.PORT}`)

@@ -41,14 +41,14 @@ router.get('/', function (req, res) {
 })
 
 // fetch all services in one specific city
-router.get('/:cityId', (req, res) => {
+router.get('/:city', (req, res) => {
   let output=[];
-  const serviceCityId = req.params.cityId
+  const city = req.params.city
 
-  let sql = `SELECT * from services `;
+  let sql = `SELECT * FROM service `;
 
-  if (serviceCityId) sql += ' WHERE servicecityid=' + serviceCityId;
-  
+  if (city) sql += " WHERE service_city LIKE '" + city + "'";
+
   connection.query(sql, function(error, results, fields) {
     if (error) throw error;
     
@@ -58,7 +58,7 @@ router.get('/:cityId', (req, res) => {
       .then((mockData) => {
        
         for (var i = 0; i < mockData.length; i++) {
-          if (mockData[i].servicecityid == serviceCityId) {
+          if (mockData[i].servicecity == city) {
             output.push(mockData[i])
           }
         }
@@ -66,7 +66,7 @@ router.get('/:cityId', (req, res) => {
    
     // push json and csv
     for (var i = 0; i < req.context.models.services.length; i++) {
-      if (req.context.models.services[i].servicecityid == serviceCityId) {
+      if (req.context.models.services[i].city == city) {
         output.push(req.context.models.services[i])
       }
     }
